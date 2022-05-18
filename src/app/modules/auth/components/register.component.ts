@@ -18,7 +18,8 @@ export class RegisterComponent implements OnInit {
         name:new FormControl('', [Validators.required, Validators.minLength(3)]),
         email: new FormControl('', [Validators.required, Validators.email]),
         password: new FormControl('', [Validators.required, Validators.minLength(5)]),
-        validatePassword: new FormControl('', [Validators.required, Validators.minLength(5)])
+        validatePassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
+        lastName:new FormControl('', [Validators.required, Validators.minLength(3)])
       },
       {
         validators: PasswordMatchValidator
@@ -28,6 +29,28 @@ export class RegisterComponent implements OnInit {
 
   SingUpValidation():void{
 
+  }
+
+  LoadFullData():void{
+    const mockData = {
+      name: 'Leonel',
+      email: 'leo@angular.com',
+      lastName: 'Rivas',
+      password: '123456',
+      validatePassword: '123456'
+    }
+
+    this.singUpForm.setValue(mockData);
+  }
+
+  LoadPartialData(){
+    const mockData = {
+      name: 'Leonel',
+      email: 'leo@angular.com',
+      lastName: 'Rivas'
+    }
+
+    this.singUpForm.patchValue(mockData);
   }
 }
 
