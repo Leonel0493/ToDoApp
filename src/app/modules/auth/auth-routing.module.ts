@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
+  },
+  {
+    path: 'singup',
+    component: LoginPageComponent
   }
 ];
 
