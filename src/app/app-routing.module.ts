@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from '@modules/auth/pages/login-page.component';
-import { Page404Component } from '@modules/not_found/pages/page404.component';
-import { TaskPageComponent } from '@modules/task/pages/task-page.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: LoginPageComponent
+    path: '',
+    loadChildren: () => import('@modules/home/home.module').then((m) => m.HomeModule)
   },
   {
-    path:'task-route',
-    component: TaskPageComponent
+    path: 'auth',
+    loadChildren: () => import('@modules/auth/auth.module').then((m) => m.AuthModule)
+  },
+  {
+    path: 'tasks',
+    loadChildren: () => import('@modules/task/task.module').then((m) => m.TaskModule)
   },
   {
     path: '**',
-    component: Page404Component
-    //redirectTo: '/task-route' Para redireccionar a otra pagina
+    loadChildren: () => import('@modules/not_found/not-found.module').then((m) => m.NotFoundModule)
   }
 ];
 
