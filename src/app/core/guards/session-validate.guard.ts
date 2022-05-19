@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SessionValidateGuard implements CanActivate {
-  private cookie:string|null = null //NOTE: Consultamos la cookie al navegador
+  private cookie:string|null = 'leonrivas@gmail.com' //NOTE: Consultamos la cookie al navegador
 
   constructor(private router:Router){
 
