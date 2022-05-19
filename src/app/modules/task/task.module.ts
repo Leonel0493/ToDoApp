@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { IfDirectiveComponent } from './components/if-directive/if-directive.component';
 import { SwitchDirectiveComponent } from './components/switch-directive/switch-directive.component';
 import { SahredModule } from '@shared/sahred.module';
+import { MyselfDirectiveComponent } from './components/myself-directive/myself-directive.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SahredModule } from '@shared/sahred.module';
     TaskPageComponent,
     HeaderComponent,
     IfDirectiveComponent,
-    SwitchDirectiveComponent
+    SwitchDirectiveComponent,
+    MyselfDirectiveComponent
   ],
   imports: [
     CommonModule,
