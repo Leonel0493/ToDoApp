@@ -8,6 +8,7 @@ import { IfDirectiveComponent } from './components/if-directive/if-directive.com
 import { SwitchDirectiveComponent } from './components/switch-directive/switch-directive.component';
 import { SahredModule } from '@shared/sahred.module';
 import { MyselfDirectiveComponent } from './components/myself-directive/myself-directive.component';
+import { NgtemplateComponent } from './components/ngtemplate/ngtemplate.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MyselfDirectiveComponent } from './components/myself-directive/myself-d
     HeaderComponent,
     IfDirectiveComponent,
     SwitchDirectiveComponent,
-    MyselfDirectiveComponent
+    MyselfDirectiveComponent,
+    NgtemplateComponent
   ],
   imports: [
     CommonModule,

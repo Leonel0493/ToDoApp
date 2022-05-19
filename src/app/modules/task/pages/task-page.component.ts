@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskPageComponent implements OnInit {
 
-  results:Array<string> = ['Result 1', 'Result 2', 'Result 3', 'Result 4', 'Result 5']
+  
   
   constructor() { }
 

@@ -1,0 +1,11 @@
+<div>
+    <ul *ngIf="results.length > 0 else tplNotFound">
+        <li *ngFor="let item of results">
+            {{item}}
+        </li>
+    </ul>
+</div>
+
+<ng-template #tplNotFound>
+    <p>No hay resultados</p>
+</ng-template>
