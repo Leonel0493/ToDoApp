@@ -6,14 +6,12 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SahredModule } from '@shared/sahred.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register.component';
-import { MyselfDirectiveComponent } from './components/myself-directive/myself-directive.component';
 
 
 @NgModule({
   declarations: [
     LoginPageComponent,
-    RegisterComponent,
-    MyselfDirectiveComponent
+    RegisterComponent
   ],
   imports: [
     CommonModule,
