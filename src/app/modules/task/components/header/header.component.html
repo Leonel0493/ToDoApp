@@ -5,12 +5,9 @@
         </div>
         <div class="menu">
             <ul>
-                <li>Overview</li>
-                <li>Requests</li>
-                <li>Shipments</li>
-                <li>Invoices</li>
-                <li>Employees</li>
-                <li>Stettings</li>
+                <li *ngFor="let item of menu;let par = even">
+                    {{par}}.{{item.name}}
+                </li>
             </ul>
         </div>
     </div>
@@ -18,7 +15,7 @@
 
         <div class="notifications">
             <span class="count">5</span>
-            <i class="uil uil-bell"></i>
+            <i class="fa-solid fa-bell"></i>
         </div>
         <div class="avatar d-all-center d-flex">
             <img src="https://avatars.githubusercontent.com/u/5788756?v=4" alt="">
