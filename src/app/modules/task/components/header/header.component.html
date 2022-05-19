@@ -8,7 +8,6 @@
                 <li 
                     [ngClass]="{'active':primero}" 
                     *ngFor="let item of menu;let primero = first"
-                    [style.color]="'red'"
                 >
                     {{item.name}}
                 </li>

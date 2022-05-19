@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let user of listUser">
+        <ng-container *ngTemplateOutlet="tplExample; context:{currentUsr: user}"></ng-container>
+    </li>
+</ul>
+
+<ng-template #tplExample let-user="currentUsr">
+    Buenos dias {{user?.name}} 🥸
+</ng-template>

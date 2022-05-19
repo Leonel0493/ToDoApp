@@ -9,6 +9,7 @@ import { SwitchDirectiveComponent } from './components/switch-directive/switch-d
 import { SahredModule } from '@shared/sahred.module';
 import { MyselfDirectiveComponent } from './components/myself-directive/myself-directive.component';
 import { NgtemplateComponent } from './components/ngtemplate/ngtemplate.component';
+import { NgtemplateContainerComponent } from './components/ngtemplate-container/ngtemplate-container.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgtemplateComponent } from './components/ngtemplate/ngtemplate.componen
     IfDirectiveComponent,
     SwitchDirectiveComponent,
     MyselfDirectiveComponent,
-    NgtemplateComponent
+    NgtemplateComponent,
+    NgtemplateContainerComponent
   ],
   imports: [
     CommonModule,
