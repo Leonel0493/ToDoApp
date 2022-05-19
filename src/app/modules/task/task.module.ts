@@ -6,6 +6,7 @@ import { TaskPageComponent } from './pages/task-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { IfDirectiveComponent } from './components/if-directive/if-directive.component';
 import { SwitchDirectiveComponent } from './components/switch-directive/switch-directive.component';
+import { SahredModule } from '@shared/sahred.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SwitchDirectiveComponent } from './components/switch-directive/switch-d
   ],
   imports: [
     CommonModule,
-    TaskRoutingModule
+    TaskRoutingModule,
+    SahredModule
   ]
 })
 export class TaskModule { }
