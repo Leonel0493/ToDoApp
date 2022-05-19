@@ -14,7 +14,7 @@
                 <input formControlName="password" type="password" placeholder="Password" />
                 <input formControlName="validatePassword" type="password" placeholder="Confirm Password" />
                 <input formControlName="lastName" type="text" placeholder="Last Name" />
-                <button [disabled]="singUpForm.invalid" type="submit">Sign Up</button>
+                <button [disabled]="singUpForm.invalid || singUpForm.pending" type="submit">Sign Up</button>
             </form>
         </div>
         <div class="overlay-container">
