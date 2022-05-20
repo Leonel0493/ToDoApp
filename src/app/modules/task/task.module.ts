@@ -10,6 +10,7 @@ import { SahredModule } from '@shared/sahred.module';
 import { MyselfDirectiveComponent } from './components/myself-directive/myself-directive.component';
 import { NgtemplateComponent } from './components/ngtemplate/ngtemplate.component';
 import { NgtemplateContainerComponent } from './components/ngtemplate-container/ngtemplate-container.component';
+import { ColumnComponent } from './components/column/column.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NgtemplateContainerComponent } from './components/ngtemplate-container/
     SwitchDirectiveComponent,
     MyselfDirectiveComponent,
     NgtemplateComponent,
-    NgtemplateContainerComponent
+    NgtemplateContainerComponent,
+    ColumnComponent
   ],
   imports: [
     CommonModule,
