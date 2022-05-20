@@ -6,8 +6,8 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit, AfterViewInit, 
-       AfterContentChecked, OnDestroy, DoCheck {
+export class CardComponent implements OnInit/* , AfterViewInit, 
+       AfterContentChecked, OnDestroy, DoCheck */ {
 
   @Input() items: Array<any> = [];
   @Input() idOrder: string | number = '';
@@ -24,7 +24,7 @@ export class CardComponent implements OnInit, AfterViewInit,
     //this.lstObservables$.push(obsIntervar$);
   }
 
-  ngAfterViewInit(): void {
+  /* ngAfterViewInit(): void {
     // const elementTitle = this.idRef.nativeElement;
     // this.render2.setStyle(elementTitle, 'color', 'red')
   }
@@ -39,6 +39,6 @@ export class CardComponent implements OnInit, AfterViewInit,
 
   ngDoCheck(): void {
     console.log('soy en doChange')
-  }
+  } */
 
 }
