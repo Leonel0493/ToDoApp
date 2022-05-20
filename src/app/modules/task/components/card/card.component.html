@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="title">No. {{ idOrder }}</div>
+  <div class="title" #idRef>No. {{ idOrder }}</div>
   <ul class="body">
     <ng-container *ngFor="let item of items">
       <li *ngIf="['price', 'time'].includes(item.key)">

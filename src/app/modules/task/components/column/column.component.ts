@@ -16,7 +16,7 @@ export class ColumnComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('---->', changes);
+    //console.log('---->', changes);
   }
 
 }

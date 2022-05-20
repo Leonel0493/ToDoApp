@@ -14,11 +14,11 @@ export class TaskPageComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    const observer1$ = interval(1000).subscribe((resp) => {
-      console.log('🦁', 'llamando');
-    })
+    // const observer1$ = interval(1000).subscribe((resp) => {
+    //   console.log('🦁', 'llamando');
+    // })
 
-    this.lstObservables$.push(observer1$);
+    //this.lstObservables$.push(observer1$);
 
     this.groups = [
       {

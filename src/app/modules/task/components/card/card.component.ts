@@ -1,18 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, AfterViewInit, AfterContentChecked, OnDestroy {
 
   @Input() items: Array<any> = [];
-  @Input() idOrder: string = '';
+  @Input() idOrder: string | number = '';
+  @ViewChild('idRef') idRef:ElementRef = new ElementRef('');
+  lstObservables$:Array<Subscription> = []
 
-  constructor() { }
+  constructor(private render2: Renderer2) { }
 
   ngOnInit(): void {
+    const obsIntervar$ = interval(1000).subscribe(() => {
+      this.idOrder = Date.now()
+    })
+
+    this.lstObservables$.push(obsIntervar$);
+  }
+
+  ngAfterViewInit(): void {
+    const elementTitle = this.idRef.nativeElement;
+    this.render2.setStyle(elementTitle, 'color', 'red')
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('Me cambieeee')
+  }
+
+  ngOnDestroy(): void {
+    this.lstObservables$.forEach((o) => o.unsubscribe());
   }
 
 }
