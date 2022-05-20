@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -6,7 +6,8 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit, AfterViewInit, AfterContentChecked, OnDestroy {
+export class CardComponent implements OnInit, AfterViewInit, 
+       AfterContentChecked, OnDestroy, DoCheck {
 
   @Input() items: Array<any> = [];
   @Input() idOrder: string | number = '';
@@ -16,24 +17,28 @@ export class CardComponent implements OnInit, AfterViewInit, AfterContentChecked
   constructor(private render2: Renderer2) { }
 
   ngOnInit(): void {
-    const obsIntervar$ = interval(1000).subscribe(() => {
-      this.idOrder = Date.now()
-    })
+    // const obsIntervar$ = interval(1000).subscribe(() => {
+    //   this.idOrder = Date.now()
+    // })
 
-    this.lstObservables$.push(obsIntervar$);
+    //this.lstObservables$.push(obsIntervar$);
   }
 
   ngAfterViewInit(): void {
-    const elementTitle = this.idRef.nativeElement;
-    this.render2.setStyle(elementTitle, 'color', 'red')
+    // const elementTitle = this.idRef.nativeElement;
+    // this.render2.setStyle(elementTitle, 'color', 'red')
   }
 
   ngAfterContentChecked(): void {
-    console.log('Me cambieeee')
+    //console.log('Me cambieeee')
   }
 
   ngOnDestroy(): void {
     this.lstObservables$.forEach((o) => o.unsubscribe());
+  }
+
+  ngDoCheck(): void {
+    console.log('soy en doChange')
   }
 
 }
