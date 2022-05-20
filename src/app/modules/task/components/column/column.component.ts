@@ -7,7 +7,8 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 })
 export class ColumnComponent implements OnInit, OnChanges {
 
-  @Input() data: Array<{id: number, name:string}> = []
+  @Input() data: Array<any> = [];
+  @Input() name: string = '';
 
   constructor() { }
 

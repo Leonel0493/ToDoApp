@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="title">No. {{ idOrder }}</div>
+  <ul class="body">
+    <ng-container *ngFor="let item of items">
+      <li *ngIf="['price', 'time'].includes(item.key)">
+        <i
+          class="fa-regular"
+          [ngClass]="{
+            'fa-credit-card': item.key == 'price',
+            'fa-clock': item.key == 'time'
+          }"
+        >
+        </i>
+        <span>{{ item.value }}</span>
+      </li>
+      <li *ngIf="['author'].includes(item.key)">
+        <img [src]="item.value.avatar" alt="avatar" class="avatar-small" />
+        <span>{{ item.value.name }}</span>
+      </li>
+    </ng-container>
+  </ul>
+</div>

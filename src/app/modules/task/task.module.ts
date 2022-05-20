@@ -11,6 +11,7 @@ import { MyselfDirectiveComponent } from './components/myself-directive/myself-d
 import { NgtemplateComponent } from './components/ngtemplate/ngtemplate.component';
 import { NgtemplateContainerComponent } from './components/ngtemplate-container/ngtemplate-container.component';
 import { ColumnComponent } from './components/column/column.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ColumnComponent } from './components/column/column.component';
     MyselfDirectiveComponent,
     NgtemplateComponent,
     NgtemplateContainerComponent,
-    ColumnComponent
+    ColumnComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
