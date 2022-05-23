@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReplaceSpacePipe } from '@shared/pipes/replace-space.pipe';
+import { Observable, Subscription } from 'rxjs';
+import { AuthTestService } from '../services/auth-test.service';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit, OnDestroy {
 
   value:string = 'Hola soy leo';
   loginForm:FormGroup = new FormGroup({});
+  lstObservables$:Array<Subscription> = []
 
-  constructor(private replaceSpace:ReplaceSpacePipe) { }
+  constructor(private replaceSpace:ReplaceSpacePipe, private authService:AuthTestService) { }
 
   ngOnInit(): void {
     this.value = this.replaceSpace.transform(this.value, '🦁');
@@ -22,9 +25,17 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.lstObservables$.forEach((obs) => obs.unsubscribe());
+  }
+
   SendCredentials():void{
-    const body = this.loginForm.value;
-    console.log(body);
+    const credentials = this.loginForm.value;
+    const obsLoginSubmit$ = this.authService.SubmitLogin(credentials).subscribe((resp) => {
+      console.log(resp);
+    });
+
+    this.lstObservables$.push(obsLoginSubmit$);
   }
 
 }

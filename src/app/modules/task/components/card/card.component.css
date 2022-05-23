@@ -40,3 +40,13 @@
     border-radius: 5px;
     object-fit: cover;
 }
+
+.btn{
+    width: 12rem;
+    height: 25px;
+    color: white;
+    background-color: tomato;
+    margin: 10px 0px 10px 0px;
+    padding: 2px 0px 2px 0px;
+    border-radius: 5px;
+}
