@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { TestCourseService } from '@shared/services/test-course.service';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +15,8 @@ export class CardComponent implements OnInit/* , AfterViewInit,
   @ViewChild('idRef') idRef:ElementRef = new ElementRef('');
   lstObservables$:Array<Subscription> = []
 
-  constructor(private render2: Renderer2) { }
+  constructor(private render2: Renderer2, private _testCouserService: TestCourseService) { 
+  }
 
   ngOnInit(): void {
     // const obsIntervar$ = interval(1000).subscribe(() => {
@@ -41,4 +43,7 @@ export class CardComponent implements OnInit/* , AfterViewInit,
     console.log('soy en doChange')
   } */
 
+  SendData():void{
+    this._testCouserService.setData('Hola soy Leo')
+  }
 }
